@@ -22,6 +22,13 @@ public class WorkRole {
         this.creationDate = creationDate;
     }
 
+    public WorkRole(Double salary, String description, String title) {
+        this.salary = salary;
+        this.description = description;
+        this.title = title;
+        this.creationDate = Date.valueOf(java.time.LocalDate.now());
+    }
+
     public Integer getRoleID() {
         return roleID;
     }
@@ -42,18 +49,38 @@ public class WorkRole {
         return creationDate;
     }
 
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public void setSalary(Double salary) {
         this.salary = salary;
     }
 
     @Override
     public String toString() {
-        return "WorkRole{" +
-                "roleID=" + roleID +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", salary=" + salary +
-                ", creationDate=" + creationDate +
-                '}';
+        return
+                "Roll-Id=" + roleID +
+                ", Titel='" + title + '\'' +
+                ", Beskrivning='" + description + '\'' +
+                ", Lön=" + salary +
+                ", Skapad=" + creationDate
+                ;
+    }
+    public String toStringEjId() {
+        return
+                "Titel='" + title + '\'' +
+                ", Beskrivning='" + description + '\'' +
+                ", Lön=" + salary +
+                ", Skapad=" + creationDate
+                ;
     }
 }

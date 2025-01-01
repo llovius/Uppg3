@@ -6,14 +6,18 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
 
-//        WorkRole workRole = new WorkRole("VD","Verkställande Direktör",100000.0,
-//            java.sql.Date.valueOf("2024-08-08"));
-        WorkRole workRole = new WorkRole("EC","Ekonomi Chef",999999.9,
-                java.sql.Date.valueOf("2024-12-31"));
+        WorkRole workRole = new WorkRole("VD","Verkställande Direktör",100000.0,
+            java.sql.Date.valueOf("2024-08-08"));
+//        WorkRole workRole = new WorkRole("EC","Ekonomi Chef",999999.9,
+//                java.sql.Date.valueOf("2024-12-31"));
         try {
-//            workRoleDAO.insertWorkRole(workRole);//måste omgärdas av try och catch-block!
-            WorkRoleDAO workRoleDAO = new WorkRoleDAOImpl();
-            workRoleDAO.insertWorkRole(workRole);
+            WorkRoleIO workRoleIO = new WorkRoleIO();
+            workRoleIO.editWorkRole();
+
+//       workRoleDAO.insertWorkRole(workRole);//måste omgärdas av try och catch-block!
+//            WorkRoleDAO workRoleDAO = new WorkRoleDAOImpl();
+//            workRoleDAO.insertWorkRole(workRole);
+            /*
             workRole = new WorkRole("VD","Verkställande Direktör",100001.0,
                     java.sql.Date.valueOf("2024-08-08"));
             workRoleDAO.insertWorkRole(workRole);
@@ -51,6 +55,8 @@ public class Main {
 
 
             workRoleDAO.shutDownDAO();
+
+             */
         } catch (Exception e) {
 
             //Skriv ut felet till konsollen
