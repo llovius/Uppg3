@@ -25,6 +25,7 @@ public class JDBCUtil {
         String userId = properties.getProperty("db.user");
         //Default password
         String password = properties.getProperty("db.password");
+        System.out.println("dbURL="+dbURL);
         //Använd metoden getConnection i DriverManager för att få en anslutning till databasen
         Connection conn = DriverManager.getConnection(dbURL, userId, password);
         //Sätt autoCommit till false
@@ -81,6 +82,7 @@ public class JDBCUtil {
             e.printStackTrace();
         }
     }
+
 
     public static void rollback(Connection conn) {
         try {
